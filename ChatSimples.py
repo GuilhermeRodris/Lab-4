@@ -7,13 +7,14 @@ MENSAGEM = "Chat aberto"
 print ("Endereço IP de destino:", IP_destino)
 print ("Porta UDP de destino:", PORTA_destino)
 print ("Mensagem enviada:", MENSAGEM)
- 
+sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+sock.sendto(MENSAGEM.encode('UTF-8'), (IP_destino, PORTA_destino))
 
 while (MENSAGEM != "QUIT"):
     MENSAGEM = input("Digite a mensagem: ")
     if (MENSAGEM == "QUIT"):
         MENSAGEM = "Fim da transmicao"
-        print("Fim da transmicao")
+        print("Fim da transmicao") 
     sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     sock.sendto(MENSAGEM.encode('UTF-8'), (IP_destino, PORTA_destino))
     if (MENSAGEM == "Fim da transmicao"):
