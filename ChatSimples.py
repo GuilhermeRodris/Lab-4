@@ -1,6 +1,6 @@
 import socket  
   
-IP_destino = "192.168.0.12"  
+IP_destino = "192.168.0.12"  #IP onde será execultado
 PORTA_destino = 32012          
 MENSAGEM = "Chat aberto"
  
